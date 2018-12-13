@@ -1,20 +1,25 @@
 language: php
+
 sudo: false
-dist: trusty
+
 php:
-  - 7
+  - 5.6
+  - 7.0
   - 7.1
   - 7.2
-cache:
-  directories:
-    - vendor
-    - $HOME/.composer/cache
+
 env:
-  matrix:
-    - DEPENDENCIES=""
-    - DEPENDENCIES="--prefer-lowest --prefer-stable"
+  global:
+    - setup=basic
+
+matrix:
+  include:
+    - php: 5.6
+      env: setup=lowest
+before_install:
+  - travis_retry composer self-update
+
 before_script:
-  - composer self-update
   - composer update $DEPENDENCIES
   - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then COVERAGE="--coverage-clover=coverage.clover"; else phpenv config-rm xdebug.ini; fi
   - if [[ $TRAVIS_PHP_VERSION = '7.1' ]]; then composer require --dev phpstan/phpstan-shim friendsofphp/php-cs-fixer; fi
