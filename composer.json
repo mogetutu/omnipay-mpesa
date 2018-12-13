@@ -1,0 +1,27 @@
+{
+    "name": "mogetutu/omnipay-mpesa",
+    "description": "Mpesa gateway for Omnipay payment processing library",
+    "type": "library",
+    "require": {
+        "omnipay/common": "^3"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3.1",
+        "phpunit/phpunit": "^6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Isaak Mogetutu",
+            "email": "imogetutu@gmail.com"
+        },
+        {
+            "name": "Omnipay Contributors",
+            "homepage": "https://github.com/mogetutu/omnipay-mpesa/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\Mpesa\\" : "src/" }
+    },
+    "prefer-stable": true
+}

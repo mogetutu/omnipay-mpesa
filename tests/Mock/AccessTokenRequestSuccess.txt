@@ -1,0 +1,9 @@
+HTTP/1.1 201 Created
+Date: Tue, 04 Dec 2018 07:14:46 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 113
+Connection: keep-alive
+Cache-Control: no-store
+Server: Apigee Router
+
+{"access_token": "LYimVTmGb6wCa4FOOg2Wl1ZjvYrT","expires_in": "3599"}
