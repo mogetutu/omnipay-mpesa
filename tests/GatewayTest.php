@@ -16,17 +16,18 @@ class GatewayTest extends GatewayTestCase
     public function testC2BRequest()
     {
         $this->setMockHttpResponse('C2BRequestSuccess.txt');
-        $options = [
-            'token' => '9rwAdA0OIsMzW1DxW6FeSmkrZdtArJZa',
+        $parameters = [
+            'token' => 'LYimVTmGb6wCa4FOOg2Wl1ZjvYrT',
             'shortCode' => '601426',
             'CommandID' => 'PaybillOnlineCommand',
             'Amount' => '200',
             'Msisdn' => '254708374149',
             'BillRefNumber' => 'credit-topup',
         ];
-        $response = $this->gateway->C2BRequest($options)->send();
+        $response = $this->gateway->C2BRequest($parameters)->send();
         $this->assertTrue($response->isSuccessful());
         $this->assertNull($response->getMessage());
+        $this->assertEquals($response->getData()['ResponseDescription'], 'Accept the service request successfully.');
     }
 
     public function testAccessTokenRequest()
@@ -35,6 +36,7 @@ class GatewayTest extends GatewayTestCase
         $options = [
             'apiKey' => '9rwAdA0OIsMzW1DxW6FeSmkrZdtArJZa',
             'apiSecret' => 'zyZb0lJhznoi4rtc',
+            'testMode' => true,
         ];
         $gateway = $this->gateway->initialize($options);
         $this->assertEquals('LYimVTmGb6wCa4FOOg2Wl1ZjvYrT', $gateway->getToken());

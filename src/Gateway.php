@@ -137,7 +137,7 @@ class Gateway extends AbstractGateway
      *
      * @param int $value
      *
-     * @return Omnipay\Mpesa\Gateway
+     * @return $this
      */
     public function setTokenExpires($value)
     {
