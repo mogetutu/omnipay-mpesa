@@ -47,7 +47,7 @@ class AccessTokenRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\AccessTokenRequest
      */
@@ -65,7 +65,7 @@ class AccessTokenRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\AccessTokenRequest
      */

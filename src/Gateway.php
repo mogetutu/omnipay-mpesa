@@ -40,7 +40,7 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getApiKey()
     {
@@ -48,9 +48,9 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
-     * @return \Omnipay\Mpesa\Message\AccessTokenRequest
+     * @return \Omnipay\Mpesa\Gateway
      */
     public function setApiKey($value)
     {
@@ -58,7 +58,7 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getApiSecret()
     {
@@ -66,9 +66,9 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
-     * @return \Omnipay\Mpesa\Message\AccessTokenRequest
+     * @return \Omnipay\Mpesa\Gateway
      */
     public function setApiSecret($value)
     {
@@ -115,7 +115,7 @@ class Gateway extends AbstractGateway
      *
      * @param string $value
      *
-     * @return RestGateway provides a fluent interface
+     * @return \Omnipay\Mpesa\Gateway
      */
     public function setToken($value)
     {
@@ -137,7 +137,7 @@ class Gateway extends AbstractGateway
      *
      * @param int $value
      *
-     * @return RestGateway provides a fluent interface
+     * @return Omnipay\Mpesa\Gateway
      */
     public function setTokenExpires($value)
     {

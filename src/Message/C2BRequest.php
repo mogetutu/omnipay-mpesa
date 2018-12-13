@@ -15,7 +15,7 @@ class C2BRequest extends AbstractRequest
     protected $testEndpoint = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate';
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\C2BRequest
      */
@@ -59,7 +59,7 @@ class C2BRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\C2BRequest
      */
@@ -77,7 +77,7 @@ class C2BRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\C2BRequest
      */
@@ -87,8 +87,9 @@ class C2BRequest extends AbstractRequest
     }
 
     /**
-     * @return array|mixed
      * @throws \Omnipay\Common\Exception\InvalidRequestException
+     *
+     * @return array|mixed
      */
     public function getData()
     {

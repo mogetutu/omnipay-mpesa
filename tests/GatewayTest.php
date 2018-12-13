@@ -1,5 +1,7 @@
 <?php
 
+namespace Omnipay\Mpesa\Tests;
+
 use Omnipay\Mpesa\Gateway;
 use Omnipay\Tests\GatewayTestCase;
 

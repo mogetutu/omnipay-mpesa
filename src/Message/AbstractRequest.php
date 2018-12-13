@@ -5,6 +5,16 @@ namespace Omnipay\Mpesa\Message;
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
     /**
+     * @var string
+     */
+    protected $liveEndpoint = 'https://api.safaricom.co.ke';
+
+    /**
+     * @var string
+     */
+    protected $testEndpoint = 'https://sandbox.safaricom.co.ke';
+
+    /**
      * @return string
      */
     public function getToken()
@@ -13,7 +23,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\AbstractRequest
      */
@@ -31,7 +41,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\AbstractRequest
      */
@@ -52,16 +62,13 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return 'POST';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function sendData($data)
     {
         $headers = array_merge(
             ['Content-Type' => 'application/json'],
             ['Authorization' => 'Bearer ' . $this->getToken()]
         );
-        $body = $data ? json_encode($data) : null;
+        $body = $data ? json_encode($data) : '';
         $httpResponse = $this->httpClient
             ->request(
                 $this->getHttpMethod(),

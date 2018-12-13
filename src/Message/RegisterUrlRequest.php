@@ -23,7 +23,7 @@ class RegisterUrlRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\RegisterUrlRequest
      */
@@ -41,7 +41,7 @@ class RegisterUrlRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\RegisterUrlRequest
      */
@@ -59,7 +59,7 @@ class RegisterUrlRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\RegisterUrlRequest
      */
