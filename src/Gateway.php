@@ -50,7 +50,7 @@ class Gateway extends AbstractGateway
     /**
      * @param string $value
      *
-     * @return \Omnipay\Mpesa\Gateway
+     * @return $this
      */
     public function setApiKey($value)
     {
@@ -68,7 +68,7 @@ class Gateway extends AbstractGateway
     /**
      * @param string $value
      *
-     * @return \Omnipay\Mpesa\Gateway
+     * @return $this
      */
     public function setApiSecret($value)
     {
@@ -115,7 +115,7 @@ class Gateway extends AbstractGateway
      *
      * @param string $value
      *
-     * @return \Omnipay\Mpesa\Gateway
+     * @return $this
      */
     public function setToken($value)
     {
