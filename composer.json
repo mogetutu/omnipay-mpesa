@@ -23,5 +23,10 @@
     "autoload": {
         "psr-4": { "Omnipay\\Mpesa\\" : "src/" }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Omnipay\\Mpesa\\Tests\\": "tests/",
+        }
+    },
     "prefer-stable": true
 }
