@@ -3,11 +3,13 @@
     "description": "Mpesa gateway for Omnipay payment processing library",
     "type": "library",
     "require": {
-        "omnipay/common": "^3"
+        "omnipay/common": "^3",
+        "ext-json": "*"
     },
     "require-dev": {
         "omnipay/tests": "^3.1",
-        "phpunit/phpunit": "^6"
+        "phpunit/phpunit": "^6",
+        "phpstan/phpstan": "^0.11.1"
     },
     "license": "MIT",
     "authors": [

@@ -7,21 +7,30 @@ use Omnipay\Tests\GatewayTestCase;
 
 class GatewayTest extends GatewayTestCase
 {
+    /**
+     * @var \Omnipay\Mpesa\Gateway
+     */
+    protected $gateway;
+
+    /**
+     * @var array
+     */
+    protected $options;
+
     public function setUp()
     {
         parent::setUp();
         $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
+        $this->options = [
+            'apiKey' => '9rwAdA0OIsMzW1DxW6FeSmkrZdtArJZa',
+            'apiSecret' => 'zyZb0lJhznoi4rtc',
+            'testMode' => true,
+        ];
     }
 
     public function testC2BRequest()
     {
         $this->setMockHttpResponse('C2BRequestSuccess.txt');
-        $options = [
-            'apiKey' => '9rwAdA0OIsMzW1DxW6FeSmkrZdtArJZa',
-            'apiSecret' => 'zyZb0lJhznoi4rtc',
-            'testMode' => true,
-        ];
-        $this->gateway->initialize($options);
         $parameters = [
             'token' => 'LYimVTmGb6wCa4FOOg2Wl1ZjvYrT',
             'shortCode' => '601426',
@@ -31,6 +40,8 @@ class GatewayTest extends GatewayTestCase
             'BillRefNumber' => 'credit-topup',
         ];
         $response = $this->gateway->C2BRequest($parameters)->send();
+        $this->assertNotNull($this->gateway->getToken());
+        $this->assertNotNull($this->gateway->getApiKey());
         $this->assertTrue($response->isSuccessful());
         $this->assertNull($response->getMessage());
         $this->assertEquals($response->getData()['ResponseDescription'], 'Accept the service request successfully.');
@@ -39,14 +50,8 @@ class GatewayTest extends GatewayTestCase
     public function testAccessTokenRequest()
     {
         $this->setMockHttpResponse('AccessTokenRequestSuccess.txt');
-        $options = [
-            'apiKey' => '9rwAdA0OIsMzW1DxW6FeSmkrZdtArJZa',
-            'apiSecret' => 'zyZb0lJhznoi4rtc',
-            'testMode' => true,
-        ];
-        $gateway = $this->gateway->initialize($options);
-        $this->assertEquals('LYimVTmGb6wCa4FOOg2Wl1ZjvYrT', $gateway->getToken());
-        $this->assertEquals(time() + 3599, $gateway->getTokenExpires());
+        $this->assertEquals('LYimVTmGb6wCa4FOOg2Wl1ZjvYrT', $this->gateway->getToken());
+        $this->assertEquals(time() + 3599, $this->gateway->getTokenExpires());
     }
 
     public function testSTKPushRequest()

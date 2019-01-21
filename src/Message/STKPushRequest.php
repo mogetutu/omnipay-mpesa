@@ -126,7 +126,8 @@ class STKPushRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     *
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\STKPushRequest
      */
@@ -144,7 +145,7 @@ class STKPushRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\STKPushRequest
      */
@@ -162,7 +163,7 @@ class STKPushRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\STKPushRequest
      */
