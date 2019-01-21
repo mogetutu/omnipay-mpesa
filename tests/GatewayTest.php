@@ -66,4 +66,20 @@ class GatewayTest extends GatewayTestCase
         $this->assertNull($response->getMessage());
         $this->assertEquals($response->getData()['ResponseDescription'], 'Success. Request accepted for processing');
     }
+
+    public function testSTKPushStatusRequest()
+    {
+        $this->setMockHttpResponse('STKPushStatusRequestSuccess.txt');
+        $parameters = [
+            'token' => 'LYimVTmGb6wCa4FOOg2Wl1ZjvYrT',
+            'shortCode' => '601426',
+            'CommandID' => 'CustomerPayBillOnline',
+            'CheckoutRequestID' => 'ws_CO_DMZ_280497284_14012019145102297',
+            'Password' => 'password',
+        ];
+        $response = $this->gateway->STKPushStatus($parameters)->send();
+        $this->assertTrue($response->isSuccessful());
+        $this->assertNull($response->getMessage());
+        $this->assertEquals($response->getData()['ResponseDescription'], 'The service request has been accepted successsfully');
+    }
 }
