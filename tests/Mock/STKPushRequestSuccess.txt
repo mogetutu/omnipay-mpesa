@@ -1,0 +1,10 @@
+HTTP/1.1 200
+Date: Tue, 04 Dec 2018 07:15:40 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 220
+Connection: keep-alive
+Cache-Control: no-store
+Server: Apigee Router
+
+{"MerchantRequestID":"17492-11615366-1","CheckoutRequestID":"ws_CO_DMZ_280410565_14012019135952470","ResponseCode": "0","ResponseDescription":"Success. Request accepted for processing","CustomerMessage":"Success. Request accepted for processing"}
+

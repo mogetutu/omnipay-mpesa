@@ -12,7 +12,7 @@ class RegisterUrlRequest extends AbstractRequest
     /**
      * @var string
      */
-    protected $liveEndpoint = 'https://api.safaricom.co.ke/v1/registerurl';
+    protected $liveEndpoint = 'https://api.safaricom.co.ke/mpesa/c2b/v1/registerurl';
 
     /**
      * @return mixed
