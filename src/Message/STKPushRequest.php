@@ -8,6 +8,7 @@ class STKPushRequest extends AbstractRequest
      * @var string
      */
     protected $liveEndpoint = 'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
+
     /**
      * @var string
      */
@@ -126,7 +127,6 @@ class STKPushRequest extends AbstractRequest
     }
 
     /**
-     *
      * @param string $value
      *
      * @return \Omnipay\Mpesa\Message\STKPushRequest
