@@ -171,7 +171,4 @@ class STKPushRequest extends AbstractRequest
     {
         return $this->setParameter('TransactionDesc', $value);
     }
-
-
-
 }
