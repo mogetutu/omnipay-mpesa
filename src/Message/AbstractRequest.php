@@ -62,6 +62,11 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return 'POST';
     }
 
+    /**
+     * @param mixed $data
+     *
+     * @return \Omnipay\Common\Message\ResponseInterface|\Omnipay\Mpesa\Message\Response
+     */
     public function sendData($data)
     {
         $headers = array_merge(
@@ -69,6 +74,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             ['Authorization' => 'Bearer ' . $this->getToken()]
         );
         $body = $data ? json_encode($data) : '';
+        $body = (string) $body;
         $httpResponse = $this->httpClient
             ->request(
                 $this->getHttpMethod(),

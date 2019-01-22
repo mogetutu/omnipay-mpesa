@@ -18,7 +18,7 @@ class AccessTokenRequest extends AbstractRequest
      *
      * @param mixed $data
      *
-     * @return string|bool
+     * @return \Omnipay\Common\Message\ResponseInterface|\Omnipay\Mpesa\Message\Response
      */
     public function sendData($data)
     {

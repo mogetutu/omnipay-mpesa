@@ -7,7 +7,7 @@ class C2BRequest extends AbstractRequest
     /**
      * @var string
      */
-    protected $liveEndpoint = 'https://api.safaricom.co.ke';
+    protected $liveEndpoint = 'https://api.safaricom.co.ke/mpesa/c2b/v1/simulate';
 
     /**
      * @var string

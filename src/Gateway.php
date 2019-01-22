@@ -6,6 +6,8 @@ use Omnipay\Common\AbstractGateway;
 use Omnipay\Mpesa\Message\AccessTokenRequest;
 use Omnipay\Mpesa\Message\C2BRequest;
 use Omnipay\Mpesa\Message\RegisterUrlRequest;
+use Omnipay\Mpesa\Message\STKPushRequest;
+use Omnipay\Mpesa\Message\STKPushStatusRequest;
 
 /**
  * @method \Omnipay\Common\Message\RequestInterface authorize(array $options = [])
@@ -178,5 +180,25 @@ class Gateway extends AbstractGateway
     public function registerUrlRequest(array $parameters = [])
     {
         return $this->createRequest(RegisterUrlRequest::class, $parameters);
+    }
+
+    /**
+     * @param array $parameters
+     *
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function STKPush(array $parameters = [])
+    {
+        return $this->createRequest(STKPushRequest::class, $parameters);
+    }
+
+    /**
+     * @param array $parameters
+     *
+     * @return \Omnipay\Common\Message\AbstractRequest
+     */
+    public function STKPushStatus(array $parameters = [])
+    {
+        return $this->createRequest(STKPushStatusRequest::class, $parameters);
     }
 }
